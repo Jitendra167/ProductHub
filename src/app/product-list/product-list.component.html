@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-body">
+    <h3 class="card-title">{{title}}</h3>
+    <p class="card-text">Select the products of your choice.</p>
+    <div class="table-responsive">
+        <table class="table table-light table-hover">
+          <thead>
+            <tr>
+              <th>Product Image</th>
+              <th>Product</th>
+              <th>Code</th>
+              <th>Available</th>
+              <th>Price</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = 'let product of products'>
+              <td>
+                <img [src]="product.imageUrl" [title]="product.productName" 
+                     [style.width.px]="imageWidth" [style.margin.px]="imageMargin"/>
+              </td>
+              <td><a [routerLink]="['/products', product.productId]">{{product.productName}}</a></td>
+              <td>{{product.productCode}}</td>
+              <td>{{product.releaseDate}}</td>
+              <td>{{product.price | currency:'USD':true:'1.2-2'}}</td>
+              <td>{{product.starRating}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>     
+  </div>
+</div>

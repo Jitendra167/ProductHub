@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div class="card" *ngIf="product">
+    <img class="card-img-top" [src]="product.imageUrl" [title]="product.productName"
+      style="width:300px;"/>
+    <div class="card-body">
+      <h4 class="card-title">{{product.productName}}</h4>
+      <p class="card-text">{{product.description}}</p>
+      <button class="btn btn-primary" (click)="onBack()">Go Back</button>
+    </div>
+  </div>
+</div>
